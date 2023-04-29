@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,14 +10,3 @@
     color: white
   }
 }
-=======
-body {
-background: black;
-   width: 100%;
-   height: 100%; 
-}
-
-h1,h2,h3,h4,h5,h6,p,a {
-    color: white;
-}
->>>>>>> d865d8a80a586d74d76f2d9157be8ba40ae7b4bd
