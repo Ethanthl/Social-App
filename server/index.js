@@ -14,7 +14,7 @@ app.use(cors());
 app.use('/posts', postRoutes)
 
 const CONNECTION_URL =
-  "mongodb+srv://ethan:1234567890@social-cluster.m2fmf22.mongodb.net/test";
+  "mongodb+srv://ethan:1234567890@social-cluster.m2fmf22.mongodb.net/test"
 const PORT = process.env.PORT || 5000;
 
 mongoose
@@ -25,4 +25,3 @@ mongoose
     })
   )
   .catch((error) => console.log(error.message));
-``
