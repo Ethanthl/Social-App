@@ -1,0 +1,48 @@
+.App {
+    text-align: center;
+  }
+  
+  .modalDiv {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: rgba(91, 112, 131, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal {
+    width: 600px;
+    min-height: 200px;
+    
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .create-container {
+    padding: 0 80px;
+    height:500px;
+  }
+
+  .modal-input {
+    background: black;
+    padding: 1rem .5rem;
+    margin: 12px 0;
+  }
+
+  .create-dob {
+    margin-top:20px;
+  }
+
+  .next-btn {
+    margin: 0 90px;
+    width: calc(100% - 180px)
+  }
+
+  .extra-info {
+    margin-top: 8px;
+    font-size: .95rem;
+    line-height: 1rem;
+  }
