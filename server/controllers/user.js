@@ -1,8 +1,10 @@
 import User from "../models/user.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-
+import dotenv from 'dotenv'
+dotenv.config()
 export const signin = async (req, res) => {
+  const secret = process.env.secret;
   const { name, password } = req.body;
   try {
     const existingUser = await User.findOne({ name });
@@ -18,7 +20,7 @@ export const signin = async (req, res) => {
     }
     const token = jwt.sign(
       { email: existingUser.email, id: existingUser._id },
-      "test",
+      secret,
       { expiresIn: "1h" }
     );
     res.status(200).json({ result: existingUser, token });

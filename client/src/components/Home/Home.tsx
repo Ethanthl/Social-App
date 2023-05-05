@@ -44,6 +44,7 @@ const Home = () => {
             >
               <button className="rounded-full background-white max-300">Create account</button>
             </Link>
+            <Form/>
             <Outlet />
           </div>
         </div>

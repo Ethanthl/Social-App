@@ -2,8 +2,9 @@ import mongoose from "mongoose";
 
 const postSchema = mongoose.Schema({
   id: Number,
-  message: String,
   name: String,
+  message: String, 
+  file: String,
   createdAt: {
     type: Date,
     default: new Date(),
