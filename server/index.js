@@ -4,7 +4,11 @@ import mongoose from "mongoose";
 import cors from "cors";
 
 import postRoutes from './routes/posts.js'
+import userRoutes from './routes/user.js'
+import dotenv from 'dotenv'
+dotenv.config()
 
+const uri = process.env.MONGO_URI;
 const app = express();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -12,9 +16,10 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use('/posts', postRoutes)
+app.use('/signup', userRoutes)
 
-const CONNECTION_URL =
-  "mongodb+srv://ethan:1234567890@social-cluster.m2fmf22.mongodb.net/test"
+
+const CONNECTION_URL = uri
 const PORT = process.env.PORT || 5000;
 
 mongoose
