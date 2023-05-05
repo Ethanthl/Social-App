@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { newUser } from "../../store/userSlice";
 import { useAppDispatch } from "../../store/store";
+
 
 export const Create = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <div className="modalDiv">
       <div className="modal rounded-2xl">
@@ -41,14 +44,30 @@ export const Create = () => {
               this account is for a business, a pet, or something else.
             </span>
             <input
-            className="modal-input border rounded-md border-gray-700"
-            onChange={(e) => setPhone(e.target.value)}
-            placeholder="Phone"
-          ></input>
+              className="modal-input border rounded-md border-gray-700"
+              placeholder="DD/MM/YYYY"
+            ></input>
+            <input
+              className="modal-input border rounded-md border-gray-700"
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+            ></input>
           </div>
-          
         </div>
-        <button className="next-btn rounded-full mb-7 p-4">Next</button>
+        <button
+          className="next-btn rounded-full mb-7 p-4"
+          onClick={() => {
+            const data = {
+              name: name,
+              phone: phone,
+              password: password,
+            };
+            dispatch(newUser(JSON.stringify(data)));
+            navigate(-1);
+          }}
+        >
+          Next
+        </button>
       </div>
     </div>
   );
