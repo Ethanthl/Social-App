@@ -6,7 +6,6 @@ Twitter website
 
 
 ### Built With
-* [![React][React.js]][React-url]
-Redux - Typescript - mongoDB - nodeJS
+React - Redux - Typescript - mongoDB - nodeJS
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
