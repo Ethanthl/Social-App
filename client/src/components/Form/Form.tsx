@@ -5,37 +5,42 @@ import { addPost, savePost } from "../../store/postSlice";
 const Form = () => {
   const dispatch = useAppDispatch();
 
-  const [postData, setPostData] = useState({name: '', message: '', file: ''})
+  const [postData, setPostData] = useState({ name: "", message: "", file: ""});
   const convertToBase64 = (file: Blob) => {
     return new Promise((resolve, reject) => {
-      const fileReader = new FileReader()
-      fileReader.readAsDataURL(file)
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
       fileReader.onload = () => {
-        resolve(fileReader.result)
-        setPostData({...postData, file: fileReader.result as string})
-      }
+        resolve(fileReader.result);
+        setPostData({ ...postData, file: fileReader.result as string });
+      };
       fileReader.onerror = (error) => {
-        reject(error)
-      }
-    })
-  }
+        reject(error);
+      };
+    });
+  };
   return (
     <>
       <label>name</label>
-      <input onChange={(e) => setPostData({...postData, name: e.target.value})}></input>
+      <input
+        onChange={(e) => setPostData({ ...postData, name: e.target.value })}
+      ></input>
       <label>message:</label>
-      <input onChange={(e) => setPostData({...postData, message: e.target.value})}></input>
-      <input type="file" onChange={(e) => {
-        if(e.target.files) {
-          const file = e.target.files[0]
-          convertToBase64(file)
-        }
-      }}></input>
+      <input
+        onChange={(e) => setPostData({ ...postData, message: e.target.value })}
+      ></input>
+      <input
+        type="file"
+        onChange={(e) => {
+          if (e.target.files) {
+            const file = e.target.files[0];
+            convertToBase64(file);
+          }
+        }}
+      ></input>
       <button
         onClick={() => {
-          const data = 
-           postData
-          ;
+          const data = postData;
           dispatch(savePost(JSON.stringify(data)));
         }}
       >

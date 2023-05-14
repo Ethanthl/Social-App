@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import "./components/Account/Create.css";
+@import "./components/Posts/Posts.css";
 
 @layer components {
 
@@ -27,4 +28,5 @@
     padding: .5rem;
     margin: .5rem 0;
   }
+
 }
