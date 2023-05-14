@@ -5,6 +5,8 @@ const postSchema = mongoose.Schema({
   name: String,
   message: String, 
   file: String,
+  likes: {type: Number, default: 0},
+  comments: {type: [String], default: []},
   createdAt: {
     type: Date,
     default: new Date(),

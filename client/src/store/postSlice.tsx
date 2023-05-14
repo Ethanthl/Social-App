@@ -5,6 +5,8 @@ export interface Post {
   name: string;
   message: string;
   file: string;
+  likes: number;
+  comments: [];
 }
 
 interface PostState {
@@ -27,6 +29,7 @@ export const fetchPost = createAsyncThunk("post/fetch", async (thunkAPI) => {
 export const savePost = createAsyncThunk(
   "post/save",
   async (message: string, thunkAPI) => {
+    console.log(message)
     const response = await fetch("http://localhost:5000/posts/", {
       method: "POST",
       headers: {
