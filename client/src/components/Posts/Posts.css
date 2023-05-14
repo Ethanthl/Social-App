@@ -19,3 +19,7 @@
   .post-content {
     max-width: 480px;
   }
+
+  .post:first-child {
+    margin-top: 5rem;
+  }
