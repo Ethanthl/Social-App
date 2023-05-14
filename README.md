@@ -1,7 +1,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 PRACTICE EXERCISE
-Twitter website
+Twitter website fullstack build
 
 
 
