@@ -6,6 +6,7 @@ import { useAppDispatch } from "../../store/store";
 import { fetchPost } from "../../store/postSlice";
 import tweet from "./../../images/tweet.png";
 import { Link, Outlet, useLocation } from "react-router-dom";
+import  AppBar  from "../Appbar/Appbar";
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -14,7 +15,7 @@ const Home = () => {
     dispatch(fetchPost());
   }, [dispatch]);
   return (
-    <div className="container mx-auto max-w-7xl">
+    <div className="container mx-auto max-w-7xl ">
       <div className="grid grid-cols-9 ">
         <div className="p-2 col-span-2">
           <div className="p-2">
@@ -28,7 +29,8 @@ const Home = () => {
           </div>
         </div>
         <div className="border-l border-r col-span-4 primary-col border-gray-700 min-h-screen">
-          <div className="container mx-auto">
+          <div className="container mx-auto main-container">
+            <AppBar/>
             <Posts />
           </div>
         </div>

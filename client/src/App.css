@@ -3,6 +3,7 @@
 @tailwind utilities;
 @import "./components/Account/Create.css";
 @import "./components/Posts/Posts.css";
+@import "./components/Appbar/Appbar.css";
 
 @layer components {
 
@@ -27,6 +28,10 @@
     font-weight: bold;
     padding: .5rem;
     margin: .5rem 0;
+  }
+
+  .main-container {
+    position: relative;
   }
 
 }
