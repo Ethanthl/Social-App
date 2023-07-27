@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div className="container mx-auto max-w-7xl ">
       <div className="grid grid-cols-9 ">
-        <div className="p-2 col-span-2">
+        <div className="p-2 col-span-2 bar-left">
           <div className="p-2">
             <img src={tweet} width="32px" className="p-1"></img>
           </div>
@@ -28,13 +28,13 @@ const Home = () => {
             </a>
           </div>
         </div>
-        <div className="border-l border-r col-span-4 primary-col border-gray-700 min-h-screen">
+        <div className="border-l border-r col-span-9 primary-col border-gray-700 min-h-screen md:col-span-4">
           <div className="container mx-auto main-container">
             <AppBar/>
             <Posts />
           </div>
         </div>
-        <div className="py-3 px-8 col-span-3">
+        <div className="py-3 px-8 col-span-3 bar-right">
           <div className="border  border-gray-700 px-4 py-3 rounded-2xl">
             <h2 className="text-xl font-bold">New to Twitter?</h2>
             <span className="text-gray-500">
@@ -46,7 +46,13 @@ const Home = () => {
             >
               <button className="rounded-full background-white max-300">Create account</button>
             </Link>
-            <Form/>
+            <Link
+              to="/login"
+              state={{ background: location }}
+            >
+              <button className="rounded-full background-white max-300">Sign in</button>
+            </Link>
+            {/* <Form/> */}
             <Outlet />
           </div>
         </div>

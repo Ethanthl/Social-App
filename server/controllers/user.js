@@ -3,11 +3,12 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from 'dotenv'
 dotenv.config()
-export const signin = async (req, res) => {
+export const signIn = async (req, res) => {
+  console.log(req.body)
   const secret = process.env.secret;
-  const { name, password } = req.body;
+  const { email, password } = req.body;
   try {
-    const existingUser = await User.findOne({ name });
+    const existingUser = await User.findOne({ email });
     if (!existingUser) {
       return res.status(404).json({ message: "User doesn't exist" });
     }
@@ -40,7 +41,7 @@ export const getUsers = async (req, res) => {
   }
 };
 export const newUser = async (req, res) => {
-  const { name, phone, password } = req.body;
+  const { name, email, password } = req.body;
   const exisintUser = await User.findOne({ name });
   //check if user exist
   if (exisintUser) {
@@ -49,7 +50,7 @@ export const newUser = async (req, res) => {
   }
   //replace password with hashed
   const hashedPassword = await bcrypt.hash(password, 12);
-  const user = { name: name, phone: phone, password: hashedPassword }
+  const user = { name: name, email: email, password: hashedPassword }
   const newUser = new User(user);
   try {
     await newUser.save();

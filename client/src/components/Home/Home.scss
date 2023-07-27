@@ -1,0 +1,5 @@
+.bar-left, .bar-right {
+  @include md {
+    display: none;
+  }
+}

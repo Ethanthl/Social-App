@@ -1,9 +1,9 @@
 .appbar {
-    position:fixed;
+    position:absolute;
     height: 50px;
-    max-width: 600px;
+    max-width: 567px;
     width: 100%;
-    top: 0;
+    top: -4rem;
     display: flex;
     align-items: center;
     padding: 1.5rem 1rem;

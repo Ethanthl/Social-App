@@ -1,0 +1,8 @@
+.login-container {
+    padding: 0 130px;
+    height:500px;
+    @include md {
+      height: fit-content;
+      min-height: 500px;
+    }
+  }
