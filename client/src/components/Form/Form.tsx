@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useAppDispatch } from "../../store/store";
-import { addPost, savePost } from "../../store/postSlice";
+import { savePost } from "../../store/postSlice";
 
 const Form = () => {
   const dispatch = useAppDispatch();

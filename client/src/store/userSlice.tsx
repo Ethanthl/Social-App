@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 export interface User {
   id: number;
   name: string;
-  phone: number;
+  email: string;
   password: string;
 }
 
@@ -27,7 +27,7 @@ const initialState: UserState = {
 export const newUser = createAsyncThunk(
   "user/save",
   async (message: string, thunkAPI) => {
-    const response = await fetch("http://localhost:5000/signup/", {
+    const response = await fetch("http://localhost:5000/users/signup/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -45,6 +45,12 @@ export const UserSlice = createSlice({
   reducers: {
     addUser: (state, action: PayloadAction<User>) => {
       state.users.push(action.payload);
+    },
+    login: (state, action: PayloadAction<User>) => {
+      state.users.push(action.payload);
+    },
+    logout: (state) => {
+      state.users = [];
     },
   },
   //Fetch requests

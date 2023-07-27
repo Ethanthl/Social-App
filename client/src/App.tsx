@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import {
   Link,
   BrowserRouter,
@@ -11,6 +11,7 @@ import {
 
 import Home from "./components/Home/Home";
 import { Create } from "./components/Account/Create";
+import Login from "./components/Account/Login";
 
 function App() {
   const location = useLocation();
@@ -20,11 +21,13 @@ function App() {
       <Routes location={background || location}>
         <Route path="/" element={<Home />}>
           <Route path="signup" element={<Create />} />
+          <Route path="login" element={<Login />} />
         </Route>
       </Routes>
       {background && (
         <Routes>
           <Route path="signup" element={<Create />} />
+          <Route path="login" element={<Login />} />
         </Routes>
       )}
     </div>
